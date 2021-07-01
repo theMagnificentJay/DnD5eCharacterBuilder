@@ -34,5 +34,7 @@ namespace DnD5eCharacterBuilder.Data
         public string PlayerName { get; set; }
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Modified { get; set; }
+
+        public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
     }
 }

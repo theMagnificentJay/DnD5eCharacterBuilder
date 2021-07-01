@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DnD5eCharacterBuilder.Data
 {
     // Logic maybe here to get modifier values?
-    public class Statistics
+    public class Statistic
     {
         [Key]
         public int Id { get; set; }
@@ -24,5 +24,7 @@ namespace DnD5eCharacterBuilder.Data
         public int Wisdom { get; set; }
         [Required(ErrorMessage = "Missing stat value.")]
         public int Charisma { get; set; }
+
+        public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
     }
 }

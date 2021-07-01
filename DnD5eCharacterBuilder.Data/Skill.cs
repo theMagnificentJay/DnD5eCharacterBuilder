@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DnD5eCharacterBuilder.Data
 {
-    public class ExpertSkills
+    public class Skill
     {
         [Key]
         public int Id { get; set; }
@@ -29,5 +29,7 @@ namespace DnD5eCharacterBuilder.Data
         public bool SleightOfHand { get; set; }
         public bool Stealth { get; set; }
         public bool Survival { get; set; }
+
+        public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
     }
 }
