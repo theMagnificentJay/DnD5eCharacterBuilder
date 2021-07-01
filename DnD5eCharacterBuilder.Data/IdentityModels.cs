@@ -25,6 +25,15 @@ namespace DnD5eCharacterBuilder.Data
         {
         }
 
+        public DbSet<Bio> Bios { get; set; }
+        public DbSet<Character> Characters { get; set; }
+        public DbSet<Expertise> Expertises { get; set; }
+        public DbSet<MiscStat> MiscStats { get; set; }
+        public DbSet<SavingThrow> SavingThrows { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+        public DbSet<Statistic> Statistics { get; set; }
+        public DbSet<JoiningTable> JoiningTables { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

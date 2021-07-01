@@ -26,5 +26,6 @@ namespace DnD5eCharacterBuilder.Data
         public string HairColor { get; set; }
         public string MiscAppearanceDetails { get; set; }
 
+        public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
     }
 }

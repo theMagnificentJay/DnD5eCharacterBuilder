@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DnD5eCharacterBuilder.Data
 {
-    public class MiscStats
+    public class MiscStat
     {
         [Key]
         public int Id { get; set; }
@@ -23,5 +23,7 @@ namespace DnD5eCharacterBuilder.Data
         public int HitPoints { get; set; }
         [Required(ErrorMessage = "Must have valid hit dice (e.g 1d10).")]
         public string HitDice { get; set; }
+
+        public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
     }
 }

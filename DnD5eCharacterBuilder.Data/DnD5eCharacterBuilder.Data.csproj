@@ -54,9 +54,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bio.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="JoiningTable.cs" />
+    <Compile Include="MiscStat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SavingThrow.cs" />
+    <Compile Include="Expertise.cs" />
+    <Compile Include="Skill.cs" />
+    <Compile Include="Statistics.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
