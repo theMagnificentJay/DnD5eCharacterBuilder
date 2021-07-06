@@ -28,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CharacterSex, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.CharacterSex, new SelectList(Enum.GetValues(typeof(Sex))), "", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.CharacterSex, new SelectList(Enum.GetValues(typeof(CharacterSex))), "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CharacterSex, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CharacterRace, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.CharacterRace, new SelectList(Enum.GetValues(typeof(Race))), "", new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.CharacterRace, new SelectList(Enum.GetValues(typeof(CharacterRace))), "", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CharacterRace, "", new { @class = "text-danger" })
             </div>
         </div>

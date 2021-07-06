@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DnD5eCharacterBuilder.Data
 {
-    public enum Sex { Male, Female, Other }
+    public enum CharacterSex { Male, Female, Other }
 
-    public enum Race { Dragonborn, Dwarf, Elf, Gnome, Half_Elf, Halfling, Half_Orc, Human, Tiefling, Leonin, Satyr, Aarakocra, Genasi, Goliath, Aasimar, Bugbear, Firbolg, Goblin, Hobgoblin, Kenku, Kobold, Lizardfolk, Orc, Tabaxi, Triton, Yuan_ti_Pureblood, Feral_Tiefling, Tortle, Changeling, Kalashtar, Shifter, Warforged, Gith, Centaur, Loxodon, Minotaur, Simic_Hybrid, Vedalken, Verdan, Locathah, Grung, Fairy, Owlfolk, Rabbitfolk }
+    public enum CharacterRace { Dragonborn, Dwarf, Elf, Gnome, Half_Elf, Halfling, Half_Orc, Human, Tiefling, Leonin, Satyr, Aarakocra, Genasi, Goliath, Aasimar, Bugbear, Firbolg, Goblin, Hobgoblin, Kenku, Kobold, Lizardfolk, Orc, Tabaxi, Triton, Yuan_ti_Pureblood, Feral_Tiefling, Tortle, Changeling, Kalashtar, Shifter, Warforged, Gith, Centaur, Loxodon, Minotaur, Simic_Hybrid, Vedalken, Verdan, Locathah, Grung, Fairy, Owlfolk, Rabbitfolk }
 
     public enum CharacterClass { Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard, Artificer }
 
@@ -22,92 +22,96 @@ namespace DnD5eCharacterBuilder.Data
         [Required]
         public string CharacterName { get; set; }
         [Required]
-        public Sex CharacterSex { get; set; }
+        public CharacterSex CharacterSex { get; set; }
         [Required]
-        public Race Race { get; set; }
+        public CharacterRace CharacterRace { get; set; }
         [Required]
         public CharacterClass CharacterClass { get; set; }
-        public Level Level { set 
+        private Level _level;
+        public Level Level
+        {
+            get { return _level; }
+            set
             {
                 if (Xp >= 355000)
                 {
-                    Level = (Level)20;
+                    _level = (Level)20;
                 }
                 else if (Xp >= 305000)
                 {
-                    Level = (Level)19;
+                    _level = (Level)19;
                 }
                 else if (Xp >= 265000)
                 {
-                    Level = (Level)18;
+                    _level = (Level)18;
                 }
                 else if (Xp >= 225000)
                 {
-                    Level = (Level)17;
+                    _level = (Level)17;
                 }
                 else if (Xp >= 195000)
                 {
-                    Level = (Level)16;
+                    _level = (Level)16;
                 }
                 else if (Xp >= 165000)
                 {
-                    Level = (Level)15;
+                    _level = (Level)15;
                 }
                 else if (Xp >= 140000)
                 {
-                    Level = (Level)14;
+                    _level = (Level)14;
                 }
                 else if (Xp >= 120000)
                 {
-                    Level = (Level)13;
+                    _level = (Level)13;
                 }
                 else if (Xp >= 100000)
                 {
-                    Level = (Level)12;
+                    _level = (Level)12;
                 }
                 else if (Xp >= 85000)
                 {
-                    Level = (Level)11;
+                    _level = (Level)11;
                 }
                 else if (Xp >= 64000)
                 {
-                    Level = (Level)10;
+                    _level = (Level)10;
                 }
                 else if (Xp >= 48000)
                 {
-                    Level = (Level)9;
+                    _level = (Level)9;
                 }
                 else if (Xp >= 34000)
                 {
-                    Level = (Level)8;
+                    _level = (Level)8;
                 }
                 else if (Xp >= 23000)
                 {
-                    Level = (Level)7;
+                    _level = (Level)7;
                 }
                 else if (Xp >= 14000)
                 {
-                    Level = (Level)6;
+                    _level = (Level)6;
                 }
                 else if (Xp >= 6500)
                 {
-                    Level = (Level)5;
+                    _level = (Level)5;
                 }
                 else if (Xp >= 2700)
                 {
-                    Level = (Level)4;
+                    _level = (Level)4;
                 }
                 else if (Xp >= 900)
                 {
-                    Level = (Level)3;
+                    _level = (Level)3;
                 }
                 else if (Xp >= 300)
                 {
-                    Level = (Level)2;
+                    _level = (Level)2;
                 }
                 else
                 {
-                    Level = (Level)1;
+                    _level = (Level)1;
                 }
             }
         }
@@ -115,6 +119,8 @@ namespace DnD5eCharacterBuilder.Data
         public int Xp { get; set; }
         [Required]
         public string PlayerName { get; set; }
+        [Required]
+        public Guid OwnerId { get; set; }
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Modified { get; set; }
 
