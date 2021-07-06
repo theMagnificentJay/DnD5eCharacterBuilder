@@ -9,7 +9,7 @@ namespace DnD5eCharacterBuilder.Data
 {
     public enum CharacterSex { Male, Female, Other }
 
-    public enum CharacterRace { Dragonborn, Dwarf, Elf, Gnome, Half_Elf, Halfling, Half_Orc, Human, Tiefling, Leonin, Satyr, Aarakocra, Genasi, Goliath, Aasimar, Bugbear, Firbolg, Goblin, Hobgoblin, Kenku, Kobold, Lizardfolk, Orc, Tabaxi, Triton, Yuan_ti_Pureblood, Feral_Tiefling, Tortle, Changeling, Kalashtar, Shifter, Warforged, Gith, Centaur, Loxodon, Minotaur, Simic_Hybrid, Vedalken, Verdan, Locathah, Grung, Fairy, Owlfolk, Rabbitfolk }
+    public enum CharacterRace { Aarakocra, Aasimar, Bugbear, Centaur, Changeling, Dragonborn, Dwarf, Elf, Fairy, Feral_Tiefling, Firbolg, Genasi, Gith, Gnome, Goblin, Goliath, Grung, Half_Elf, Half_Orc, Halfling, Hobgoblin, Human, Kalashtar, Kenku, Kobold, Leonin, Lizardfolk, Locathah, Loxodon, Minotaur, Orc, Owlfolk, Rabbitfolk, Satyr, Shifter, Simic_Hybrid, Tabaxi, Tiefling, Tortle, Triton, Vedalken, Verdan, Warforged, Yuan_ti_Pureblood }
 
     public enum CharacterClass { Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard, Artificer }
 
