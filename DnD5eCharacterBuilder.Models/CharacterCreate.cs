@@ -80,10 +80,26 @@ namespace DnD5eCharacterBuilder.Models
         [Required]
         [Display(Name ="Class")]
         public CharacterClass CharacterClass { get; set; }
+        [Display(Name ="Class")]
+        public List<SelectList> CClass { get; set; } = new List<SelectList>
+        {
+            new SelectList(CharacterClass.Artificer.ToString(), ((int)CharacterClass.Artificer).ToString()),
+            new SelectList(CharacterClass.Barbarian.ToString(), ((int)CharacterClass.Barbarian).ToString()),
+            new SelectList(CharacterClass.Bard.ToString(), ((int)CharacterClass.Bard).ToString()),
+            new SelectList(CharacterClass.Cleric.ToString(), ((int)CharacterClass.Cleric).ToString()),
+            new SelectList(CharacterClass.Druid.ToString(), ((int)CharacterClass.Druid).ToString()),
+            new SelectList(CharacterClass.Fighter.ToString(), ((int)CharacterClass.Fighter).ToString()),
+            new SelectList(CharacterClass.Monk.ToString(), ((int)CharacterClass.Monk).ToString()),
+            new SelectList(CharacterClass.Paladin.ToString(), ((int)CharacterClass.Paladin).ToString()),
+            new SelectList(CharacterClass.Ranger.ToString(), ((int)CharacterClass.Ranger).ToString()),
+            new SelectList(CharacterClass.Rogue.ToString(), ((int)CharacterClass.Rogue).ToString()),
+            new SelectList(CharacterClass.Sorcerer.ToString(), ((int)CharacterClass.Sorcerer).ToString()),
+            new SelectList(CharacterClass.Warlock.ToString(), ((int)CharacterClass.Warlock).ToString()),
+            new SelectList(CharacterClass.Wizard.ToString(), ((int)CharacterClass.Wizard).ToString()),
+        };
         [Required]
-        [Display(Name ="Level")]
-        public Level Level { get; set; }
-        public int Xp { get; set; } // Build logic here to automatically set level prop also this should not be required upon creation so nullable? RESEARCH
+        [Display(Name ="Xp")]
+        public int Xp { get; set; }
         [Required]
         [Display(Name ="Player Name")]
         public string PlayerName { get; set; }

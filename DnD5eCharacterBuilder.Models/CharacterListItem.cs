@@ -18,7 +18,7 @@ namespace DnD5eCharacterBuilder.Models
         public Race Race { get; set; }
         [Display(Name="Class")]
         public CharacterClass CharacterClass { get; set; }
-        [Display(Name="Level")]
+        [Display(Name = "Level")]
         public Level Level { get; set; }
         [Display(Name="Created")]
         public DateTimeOffset Created { get; set; }
