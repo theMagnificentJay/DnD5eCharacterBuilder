@@ -29,7 +29,7 @@ namespace DnD5eCharacterBuilder.Models
         [Required]
         [Display(Name ="Race")]
         public Race Race { get; set; }
-        [Display(Name ="Race")
+        [Display(Name ="Race")]
         public List<SelectList> CharacterRace { get; set; } = new List<SelectList>
         {
             new SelectList(Race.Aarakocra.ToString(), ((int)Race.Aarakocra).ToString()),
