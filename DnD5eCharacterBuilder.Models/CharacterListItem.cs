@@ -15,7 +15,7 @@ namespace DnD5eCharacterBuilder.Models
         [Display(Name="Character Name")]
         public string CharacterName { get; set; }
         [Display(Name="Race")]
-        public Race Race { get; set; }
+        public CharacterRace CharacterRace { get; set; }
         [Display(Name="Class")]
         public CharacterClass CharacterClass { get; set; }
         [Display(Name = "Level")]
