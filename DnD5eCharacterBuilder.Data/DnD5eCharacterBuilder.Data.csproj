@@ -63,7 +63,7 @@
     <Compile Include="SavingThrow.cs" />
     <Compile Include="Expertise.cs" />
     <Compile Include="Skill.cs" />
-    <Compile Include="Statistics.cs" />
+    <Compile Include="Statistic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
