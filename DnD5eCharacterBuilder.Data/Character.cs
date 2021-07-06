@@ -27,93 +27,92 @@ namespace DnD5eCharacterBuilder.Data
         public CharacterRace CharacterRace { get; set; }
         [Required]
         public CharacterClass CharacterClass { get; set; }
-        private Level _level;
         public Level Level
         {
-            get { return _level; }
-            set
+            get
             {
                 if (Xp >= 355000)
                 {
-                    _level = (Level)20;
+                    return (Level)20;
                 }
                 else if (Xp >= 305000)
                 {
-                    _level = (Level)19;
+                    return (Level)19;
                 }
                 else if (Xp >= 265000)
                 {
-                    _level = (Level)18;
+                    return (Level)18;
                 }
                 else if (Xp >= 225000)
                 {
-                    _level = (Level)17;
+                    return (Level)17;
                 }
                 else if (Xp >= 195000)
                 {
-                    _level = (Level)16;
+                    return (Level)16;
                 }
                 else if (Xp >= 165000)
                 {
-                    _level = (Level)15;
+                    return (Level)15;
                 }
                 else if (Xp >= 140000)
                 {
-                    _level = (Level)14;
+                    return (Level)14;
                 }
                 else if (Xp >= 120000)
                 {
-                    _level = (Level)13;
+                    return (Level)13;
                 }
                 else if (Xp >= 100000)
                 {
-                    _level = (Level)12;
+                    return (Level)12;
                 }
                 else if (Xp >= 85000)
                 {
-                    _level = (Level)11;
+                    return (Level)11;
                 }
                 else if (Xp >= 64000)
                 {
-                    _level = (Level)10;
+                    return (Level)10;
                 }
                 else if (Xp >= 48000)
                 {
-                    _level = (Level)9;
+                    return (Level)9;
                 }
                 else if (Xp >= 34000)
                 {
-                    _level = (Level)8;
+                    return (Level)8;
                 }
                 else if (Xp >= 23000)
                 {
-                    _level = (Level)7;
+                    return (Level)7;
                 }
                 else if (Xp >= 14000)
                 {
-                    _level = (Level)6;
+                    return (Level)6;
                 }
                 else if (Xp >= 6500)
                 {
-                    _level = (Level)5;
+                    return (Level)5;
                 }
                 else if (Xp >= 2700)
                 {
-                    _level = (Level)4;
+                    return (Level)4;
                 }
                 else if (Xp >= 900)
                 {
-                    _level = (Level)3;
+                    return (Level)3;
                 }
                 else if (Xp >= 300)
                 {
-                    _level = (Level)2;
+                    return (Level)2;
                 }
                 else
                 {
-                    _level = (Level)1;
+                    return (Level)1;
                 }
             }
+            set { }
         }
         [Required]
         public int Xp { get; set; }
