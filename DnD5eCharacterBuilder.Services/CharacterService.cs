@@ -63,5 +63,66 @@ namespace DnD5eCharacterBuilder.Services
                 return query.ToArray();
             }
         }
+
+        public CharacterDetail GetCharacterById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Characters
+                    .Single(e => e.Id == id && e.OwnerId == _userId);
+                return
+                    new CharacterDetail
+                    {
+                        CharacterId = entity.Id,
+                        CharacterName = entity.CharacterName,
+                        CharacterSex = entity.CharacterSex,
+                        CharacterRace = entity.CharacterRace,
+                        CharacterClass = entity.CharacterClass,
+                        Level = entity.Level,
+                        Xp = entity.Xp,
+                        PlayerName = entity.PlayerName,
+                        Created = entity.Created,
+                        Modified = entity.Modified
+                    };
+            }
+        }
+
+        public bool UpdateCharacter(CharacterEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Characters
+                    .Single(e => e.Id == model.CharacterId && e.OwnerId == _userId);
+
+                entity.CharacterName = model.CharacterName;
+                entity.CharacterSex = model.CharacterSex;
+                entity.CharacterRace = model.CharacterRace;
+                entity.CharacterClass = model.CharacterClass;
+                entity.Xp = model.Xp;
+                entity.PlayerName = model.PlayerName;
+                entity.Modified = DateTimeOffset.Now;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteCharacter(int characterId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Characters
+                    .Single(e => e.Id == characterId && e.OwnerId == _userId);
+
+                ctx.Characters.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
