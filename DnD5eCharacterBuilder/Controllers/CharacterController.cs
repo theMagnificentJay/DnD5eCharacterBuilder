@@ -49,5 +49,31 @@ namespace DnD5eCharacterBuilder.Controllers
             var service = new CharacterService(userId);
             return service;
         }
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateCharacterService();
+            var model = svc.GetCharacterById(id);
+
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCharacterService();
+            var detail = service.GetCharacterById(id);
+            var model =
+                new CharacterEdit
+                {
+                    CharacterId = detail.CharacterId,
+                    CharacterName = detail.CharacterName,
+                    CharacterSex = detail.CharacterSex,
+                    CharacterRace = detail.CharacterRace,
+                    CharacterClass = detail.CharacterClass,
+                    Xp = detail.Xp,
+                    PlayerName = detail.PlayerName
+                };
+            return View(model);
+        }
     }
 }
