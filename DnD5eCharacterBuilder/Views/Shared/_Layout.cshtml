@@ -9,6 +9,9 @@
 
 </head>
 <body>
+    <div class="loader">
+        <img src="https://i.pinimg.com/originals/c2/68/06/c268065ac6f9eb4d60c63c70b49f5e26.gif" alt="Loading..." />
+    </div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -26,8 +29,8 @@
                     {
                         <li>@Html.ActionLink("Characters", "Index", "Character")</li>
                     }
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <!--<li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>-->
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -35,7 +38,6 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
         <footer class="navbar-fixed-bottom text-center footer">
             <p>| &copy; @DateTime.Now.Year | Joshua 'Jay' Reed | DnD 5e Character Builder |</p>
         </footer>
@@ -43,6 +45,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/scripts")
     @RenderSection("scripts", required: false)
 </body>
 </html>
