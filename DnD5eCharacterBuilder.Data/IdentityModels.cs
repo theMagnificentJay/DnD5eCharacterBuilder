@@ -34,7 +34,6 @@ namespace DnD5eCharacterBuilder.Data
         public DbSet<SavingThrow> SavingThrows { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<Statistic> Statistics { get; set; }
-        public DbSet<JoiningTable> JoiningTables { get; set; }
 
         public static ApplicationDbContext Create()
         {

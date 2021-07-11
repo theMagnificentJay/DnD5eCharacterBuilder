@@ -1,4 +1,4 @@
-﻿@model DnD5eCharacterBuilder.Models.CharacterDetail
+﻿@model DnD5eCharacterBuilder.Models.JoiningTable
 
 @{
     ViewBag.Title = "Details";
@@ -9,7 +9,7 @@
 
         <div class="charsheetBlock" style="text-align: center;">
             <div style="text-align: center;">
-                <h2 style="letter-spacing:2px">@Html.DisplayFor(model => model.CharacterName)</h2>
+                <h2 style="letter-spacing:2px">@Html.DisplayFor(model => model.Character.CharacterName)</h2>
             </div>
 
             <div class="row align-items-start boldthis">
@@ -18,9 +18,9 @@
                 <div class="col-sm-4">Sex</div>
             </div>
             <div class="row align-items-center">
-                <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterName)</div>
-                <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterRace)</div>
-                <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterSex)</div>
+                <div class="col-sm-4">@Html.DisplayFor(model => model.Character.CharacterName)</div>
+                <div class="col-sm-4">@Html.DisplayFor(model => model.Character.CharacterRace)</div>
+                <div class="col-sm-4">@Html.DisplayFor(model => model.Character.CharacterSex)</div>
             </div>
             <p></p>
             <div class="row align-items-end boldthis">
@@ -29,9 +29,9 @@
                 <div class="col-sm-4">Xp</div>
             </div>
             <div class="row align-items-end">
-                <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterClass)</div>
-                <div class="col-sm-4">@Html.DisplayFor(model => model.Level)</div>
-                <div class="col-sm-4">@Html.DisplayFor(model => model.Xp)</div>
+                <div class="col-sm-4">@Html.DisplayFor(model => model.Character.CharacterClass)</div>
+                <div class="col-sm-4">@Html.DisplayFor(model => model.Character.Level)</div>
+                <div class="col-sm-4">@Html.DisplayFor(model => model.Character.Xp)</div>
             </div>
 
         </div>
@@ -53,12 +53,12 @@
                         <div class="col-sm-2">Charisma</div>
                     </div>
                     <div class="row align-items-center">
-                        <div class="col-sm-2">Value</div>
-                        <div class="col-sm-2">Value</div>
-                        <div class="col-sm-2">Value</div>
-                        <div class="col-sm-2">Value</div>
-                        <div class="col-sm-2">Value</div>
-                        <div class="col-sm-2">Value</div>
+                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistic.Strength)</div>
+                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistic.Dexterity)</div>
+                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistic.Constitution)</div>
+                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistic.Intelligence)</div>
+                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistic.Wisdom)</div>
+                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistic.Charisma)</div>
                     </div>
                     <div class="row align-items-center">
                         <div class="col-sm-2">Mod</div>
@@ -68,6 +68,13 @@
                         <div class="col-sm-2">Mod</div>
                         <div class="col-sm-2">Mod</div>
                     </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:25px">
+                <div>
+                    @Html.ActionLink("Create", "Create", "Statistic", new { id = Model.CharacterId }, null) |
+                    @Html.ActionLink("Edit", "Edit", "Statistic", new { id = Model.CharacterId }, null)
                 </div>
             </div>
 
@@ -159,16 +166,14 @@
 
             <div class="row align-items-center">
                 <div class="col-sm-2 boldthis">Player</div>
-                <div class="col-sm-2">@Html.DisplayFor(model => model.PlayerName)</div>
+                <div class="col-sm-2">@Html.DisplayFor(model => model.Character.PlayerName)</div>
                 <div class="col-sm-2 boldthis">Created</div>
-                <div class="col-sm-2">@Html.DisplayFor(model => model.Created)</div>
+                <div class="col-sm-2">@Html.DisplayFor(model => model.Character.Created)</div>
                 <div class="col-sm-2 boldthis">Modified</div>
-                <div class="col-sm-2">@Html.DisplayFor(model => model.Modified)</div>
+                <div class="col-sm-2">@Html.DisplayFor(model => model.Character.Modified)</div>
             </div>
 
         </div>
-
-    </div>
 
         <div style="text-align:center;margin-top:25px">
             <div>
@@ -177,4 +182,5 @@
                 @Html.ActionLink("Back to List", "Index")
             </div>
         </div>
+    </div>
 </div>

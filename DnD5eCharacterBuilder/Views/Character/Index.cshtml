@@ -6,12 +6,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Characters</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<table class="table table-dark">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CharacterID)
@@ -64,3 +61,7 @@
     }
 
 </table>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary btn-sm">Add New</a>
+</p>

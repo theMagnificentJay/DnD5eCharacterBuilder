@@ -55,7 +55,7 @@ namespace DnD5eCharacterBuilder.Services
                             CharacterName = e.CharacterName,
                             CharacterRace = e.CharacterRace,
                             CharacterClass = e.CharacterClass,
-                            Level = e.Level,
+                            Level = e.Level.ToString().Replace("Level_", ""),
                             Created = e.Created
                         }
                         );
@@ -80,7 +80,7 @@ namespace DnD5eCharacterBuilder.Services
                         CharacterSex = entity.CharacterSex,
                         CharacterRace = entity.CharacterRace,
                         CharacterClass = entity.CharacterClass,
-                        Level = entity.Level,
+                        Level = entity.Level.ToString().Replace("Level_", ""),
                         Xp = entity.Xp,
                         PlayerName = entity.PlayerName,
                         Created = entity.Created,

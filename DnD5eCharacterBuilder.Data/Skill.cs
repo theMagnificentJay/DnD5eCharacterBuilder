@@ -29,7 +29,5 @@ namespace DnD5eCharacterBuilder.Data
         public bool SleightOfHand { get; set; }
         public bool Stealth { get; set; }
         public bool Survival { get; set; }
-
-        public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
     }
 }

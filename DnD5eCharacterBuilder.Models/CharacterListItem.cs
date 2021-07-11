@@ -19,10 +19,9 @@ namespace DnD5eCharacterBuilder.Models
         [Display(Name="Class")]
         public CharacterClass CharacterClass { get; set; }
         [Display(Name = "Level")]
-        public Level Level { get; set; }
+        public string Level { get; set; }
+        public virtual Level EnumLevel { get; set; }
         [Display(Name="Created")]
         public DateTimeOffset Created { get; set; }
-
-
     }
 }
