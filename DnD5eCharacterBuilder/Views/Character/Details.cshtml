@@ -4,96 +4,177 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>CharacterDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CharacterId)
-        </dt>
+    <div class="container">
 
-        <dd>
-            @Html.DisplayFor(model => model.CharacterId)
-        </dd>
+        <div class="charsheetBlock" style="text-align: center;">
+            <div style="text-align: center;">
+                <h2 style="letter-spacing:2px">@Html.DisplayFor(model => model.CharacterName)</h2>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CharacterName)
-        </dt>
+            <div class="row align-items-start boldthis">
+                <div class="col-sm-4">Name</div>
+                <div class="col-sm-4">Race</div>
+                <div class="col-sm-4">Sex</div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterName)</div>
+                <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterRace)</div>
+                <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterSex)</div>
+            </div>
+            <p></p>
+            <div class="row align-items-end boldthis">
+                <div class="col-sm-4">Class</div>
+                <div class="col-sm-4">Level</div>
+                <div class="col-sm-4">Xp</div>
+            </div>
+            <div class="row align-items-end">
+                <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterClass)</div>
+                <div class="col-sm-4">@Html.DisplayFor(model => model.Level)</div>
+                <div class="col-sm-4">@Html.DisplayFor(model => model.Xp)</div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CharacterName)
-        </dd>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CharacterSex)
-        </dt>
+        <div class="charsheetBlock">
 
-        <dd>
-            @Html.DisplayFor(model => model.CharacterSex)
-        </dd>
+            <div>
+                <hr />
+                <div style="text-align: center;">
+                    <h3>Statistics</h3>
+                </div>
+                <div style="text-align: center">
+                    <div class="row align-items-center boldthis">
+                        <div class="col-sm-2">Strength</div>
+                        <div class="col-sm-2">Dexterity</div>
+                        <div class="col-sm-2">Constitution</div>
+                        <div class="col-sm-2">Intelligence</div>
+                        <div class="col-sm-2">Wisdom</div>
+                        <div class="col-sm-2">Charisma</div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-sm-2">Value</div>
+                        <div class="col-sm-2">Value</div>
+                        <div class="col-sm-2">Value</div>
+                        <div class="col-sm-2">Value</div>
+                        <div class="col-sm-2">Value</div>
+                        <div class="col-sm-2">Value</div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-sm-2">Mod</div>
+                        <div class="col-sm-2">Mod</div>
+                        <div class="col-sm-2">Mod</div>
+                        <div class="col-sm-2">Mod</div>
+                        <div class="col-sm-2">Mod</div>
+                        <div class="col-sm-2">Mod</div>
+                    </div>
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CharacterRace)
-        </dt>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CharacterRace)
-        </dd>
+        <div class="charsheetBlock">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CharacterClass)
-        </dt>
+            <div style="text-align: center">
+                <div class="row align-items-center boldthis">
+                    <div class="col-sm-2">Str Save</div>
+                    <div class="col-sm-2">Dex Save</div>
+                    <div class="col-sm-2">Con Save</div>
+                    <div class="col-sm-2">Int Save</div>
+                    <div class="col-sm-2">Wis Save</div>
+                    <div class="col-sm-2">Cha Save</div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-sm-2">Value</div>
+                    <div class="col-sm-2">Value</div>
+                    <div class="col-sm-2">Value</div>
+                    <div class="col-sm-2">Value</div>
+                    <div class="col-sm-2">Value</div>
+                    <div class="col-sm-2">Value</div>
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CharacterClass)
-        </dd>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Level)
-        </dt>
+        <div class="charsheetBlock">
 
-        <dd>
-            @Html.DisplayFor(model => model.Level)
-        </dd>
+            <hr />
+            <div style="text-align: center">
+                <h3>Skills</h3>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Xp)
-        </dt>
+            <div class="row align-items-center">
+                <div class="col-sm-2 boldthis">Acrobatics</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">Animal Handling</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">Arcana</div>
+                <div class="col-sm-2">Value</div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-sm-2 boldthis">Athletics</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">Deception</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">History</div>
+                <div class="col-sm-2">Value</div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-sm-2 boldthis">Insight</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">Intimidation</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">Investigation</div>
+                <div class="col-sm-2">Value</div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-sm-2 boldthis">Medicine</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">Nature</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">Perception</div>
+                <div class="col-sm-2">Value</div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-sm-2 boldthis">Performance</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">Persuasion</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">Religion</div>
+                <div class="col-sm-2">Value</div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-sm-2 boldthis">Sleight of Hand</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">Stealth</div>
+                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2 boldthis">Survival</div>
+                <div class="col-sm-2">Value</div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Xp)
-        </dd>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PlayerName)
-        </dt>
+        <div class="charsheetBlock">
+            <hr />
 
-        <dd>
-            @Html.DisplayFor(model => model.PlayerName)
-        </dd>
+            <div class="row align-items-center">
+                <div class="col-sm-2 boldthis">Player</div>
+                <div class="col-sm-2">@Html.DisplayFor(model => model.PlayerName)</div>
+                <div class="col-sm-2 boldthis">Created</div>
+                <div class="col-sm-2">@Html.DisplayFor(model => model.Created)</div>
+                <div class="col-sm-2 boldthis">Modified</div>
+                <div class="col-sm-2">@Html.DisplayFor(model => model.Modified)</div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Created)
-        </dt>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Created)
-        </dd>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Modified)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Modified)
-        </dd>
-
-    </dl>
+        <div style="text-align:center;margin-top:25px">
+            <div>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.CharacterId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = Model.CharacterId }) |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CharacterId }) |
-    @Html.ActionLink("Delete", "Delete", new { id = Model.CharacterId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

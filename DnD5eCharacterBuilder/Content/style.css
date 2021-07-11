@@ -1,0 +1,40 @@
+﻿body {
+    background-color: black;
+    font-family: Arial;
+    color: grey;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans;
+    letter-spacing: 1.666px;
+}
+
+.jumbotron {
+    margin-top: 15px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.btn-primary {
+    background-color: red;
+    border: 1px solid black;
+}
+
+.btn-primary:hover {
+    background-color: darkred;
+    border: 1px solid black;
+}
+
+.charsheetBlock {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.boldthis {
+    font-weight: bold;
+}
+
+.footer {
+    background-color: black;
+}
