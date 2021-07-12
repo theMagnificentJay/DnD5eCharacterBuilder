@@ -8,6 +8,7 @@
     <div class="container">
 
         <div class="charsheetBlock" style="text-align: center;">
+            <hr />
             <div style="text-align: center;">
                 <h2 style="letter-spacing:2px">@Html.DisplayFor(model => model.CharacterName)</h2>
             </div>
@@ -19,7 +20,7 @@
             </div>
             <div class="row align-items-center">
                 <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterName)</div>
-                <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterRace).ToString().Replace("_", " ")</div>
+                <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterRace).ToString().Replace("_", "-")</div>
                 <div class="col-sm-4">@Html.DisplayFor(model => model.CharacterSex)</div>
             </div>
             <p></p>
@@ -165,10 +166,9 @@
                 <div class="col-sm-2 boldthis">Modified</div>
                 <div class="col-sm-2">@Html.DisplayFor(model => model.Modified)</div>
             </div>
+            <hr />
 
         </div>
-
-    </div>
 
         <div style="text-align:center;margin-top:25px">
             <div>
@@ -177,4 +177,5 @@
                 @Html.ActionLink("Back to List", "Index")
             </div>
         </div>
+    </div>
 </div>

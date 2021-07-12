@@ -41,13 +41,13 @@
                 @Html.DisplayFor(modelItem => item.CharacterName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CharacterRace)
+                @Html.DisplayFor(modelItem => item.CharacterRace).ToString().Replace("_", "-")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CharacterClass)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Level)
+                @Html.DisplayFor(modelItem => item.Level).ToString().Replace("Level_", "")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Created)
