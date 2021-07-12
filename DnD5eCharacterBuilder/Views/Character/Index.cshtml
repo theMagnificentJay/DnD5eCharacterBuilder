@@ -41,21 +41,21 @@
                 @Html.DisplayFor(modelItem => item.CharacterName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CharacterRace)
+                @Html.DisplayFor(modelItem => item.CharacterRace).ToString().Replace("_", "-")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CharacterClass)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Level)
+                @Html.DisplayFor(modelItem => item.Level).ToString().Replace("Level_", "")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Created)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.CharacterID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.CharacterID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.CharacterID })
+                @Html.ActionLink("Edit", "Edit", new { id = item.CharacterID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CharacterID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CharacterID })
             </td>
         </tr>
     }

@@ -8,19 +8,31 @@
 
 <h2>Create</h2>
 
+<script type="text/javascript">
+    var fN = ["1", "2", "3"];
+    var lN = ["1", "2", "3"];
+
+    function generateName() {
+        var rN = fN[Math.floor(Math.random() * fN.length)] + ' ' + lN[Math.floor(Math.random() * lN.length)];
+        return rN;
+    }
+</script> <!-- THIS NO WORK RIGHT NOW - Need to link to button and set the (at)Value on line 32  -->
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>CharacterCreate</h4>
+        <h4>Create a Character</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.CharacterName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CharacterName, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-10" style="display: inline-flex">
+                @Html.EditorFor(model => model.CharacterName, new { htmlAttributes = new { @class = "form-control", @Value = "Default" } })
+                <button type="button" class="btn btn-primary btn-sm" style="margin-left:15px">Random</button> <!-- Maybe set to onclick set value for model.charactername? -->
+            </div>
+            <div style="padding-left:210px">
                 @Html.ValidationMessageFor(model => model.CharacterName, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -67,7 +79,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </div>
     </div>
