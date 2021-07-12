@@ -79,7 +79,12 @@
     <Compile Include="CharacterDetail.cs" />
     <Compile Include="CharacterEdit.cs" />
     <Compile Include="CharacterListItem.cs" />
+    <Compile Include="JoiningTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatisticCreate.cs" />
+    <Compile Include="StatisticDetail.cs" />
+    <Compile Include="StatisticEdit.cs" />
+    <Compile Include="StatisticListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

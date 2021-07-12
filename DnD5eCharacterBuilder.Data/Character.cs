@@ -123,6 +123,6 @@ namespace DnD5eCharacterBuilder.Data
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Modified { get; set; }
 
-        public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
+        public virtual Statistic Statistics { get; set; }
     }
 }
