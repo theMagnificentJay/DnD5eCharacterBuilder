@@ -17,7 +17,5 @@ namespace DnD5eCharacterBuilder.Data
         public bool IntelligenceSave { get; set; }
         public bool WisdomSave { get; set; }
         public bool CharismaSave { get; set; }
-
-        public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
     }
 }

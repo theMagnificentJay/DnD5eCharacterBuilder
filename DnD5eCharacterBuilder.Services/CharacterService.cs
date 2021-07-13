@@ -29,7 +29,7 @@ namespace DnD5eCharacterBuilder.Services
                     CharacterClass = model.CharacterClass,
                     Xp = model.Xp,
                     PlayerName = model.PlayerName,
-                    Created = DateTimeOffset.Now,
+                    Created = DateTimeOffset.Now
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -55,7 +55,7 @@ namespace DnD5eCharacterBuilder.Services
                             CharacterName = e.CharacterName,
                             CharacterRace = e.CharacterRace,
                             CharacterClass = e.CharacterClass,
-                            Level = e.Level,
+                            Level = e.Level.ToString().Replace("Level_", ""),
                             Created = e.Created
                         }
                         );
@@ -80,11 +80,12 @@ namespace DnD5eCharacterBuilder.Services
                         CharacterSex = entity.CharacterSex,
                         CharacterRace = entity.CharacterRace,
                         CharacterClass = entity.CharacterClass,
-                        Level = entity.Level,
+                        Level = entity.Level.ToString().Replace("Level_", ""),
                         Xp = entity.Xp,
                         PlayerName = entity.PlayerName,
                         Created = entity.Created,
-                        Modified = entity.Modified
+                        Modified = entity.Modified,
+                        Statistics = entity.Statistics
                     };
             }
         }
@@ -114,11 +115,17 @@ namespace DnD5eCharacterBuilder.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+                var stat =
+                    ctx
+                    .Statistics
+                    .Single(e => e.StatisticId == characterId && e.Character.OwnerId == _userId);
+
                 var entity =
                     ctx
                     .Characters
                     .Single(e => e.Id == characterId && e.OwnerId == _userId);
 
+                ctx.Statistics.Remove(stat);
                 ctx.Characters.Remove(entity);
 
                 return ctx.SaveChanges() == 1;

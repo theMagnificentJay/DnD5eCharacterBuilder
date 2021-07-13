@@ -10,19 +10,18 @@ namespace DnD5eCharacterBuilder.Models
 {
     public class CharacterListItem
     {
-        [Display(Name="Id")]
+        [Display(Name = "Id")]
         public int CharacterID { get; set; }
-        [Display(Name="Character Name")]
+        [Display(Name = "Character Name")]
         public string CharacterName { get; set; }
-        [Display(Name="Race")]
+        [Display(Name = "Race")]
         public CharacterRace CharacterRace { get; set; }
-        [Display(Name="Class")]
+        [Display(Name = "Class")]
         public CharacterClass CharacterClass { get; set; }
         [Display(Name = "Level")]
-        public Level Level { get; set; }
-        [Display(Name="Created")]
+        public string Level { get; set; }
+        public virtual Level EnumLevel { get; set; }
+        [Display(Name = "Created")]
         public DateTimeOffset Created { get; set; }
-
-
     }
 }

@@ -2,11 +2,25 @@
     ViewBag.Title = "Home Page";
 }
 
+<script type="text/javascript">
+    randQuote = function () {
+        var q = new Array();
+        q[0] = '<i>"The secret we should never let the gamemasters know is that they don\'t need any rules." ― Gary Gygax</i>';
+        q[1] = '<i>"How do you want to do this?" ― Matthew Mercer</i>';
+        q[2] = '<i>"Fireball isn\'t the answer to all your problems."</i> <br /> <i>"I\'d choose your words carefully person standing within fireball distance." ― JoCat</i>';
+        var rand = Math.floor(Math.random() * q.length);
+        document.write(q[rand]);
+    }
+</script>
+
 <div class="jumbotron">
     <h1>DnD 5e Character Builder</h1>
     <p class="lead">Dungeon and Dragons 5th edition character builder. This is a database that saves character information to an online database for tracking growth of your saved characters. You can create, view, update, and delete characters at your whim while playing in your campaign.</p>
     <p class="text-muted" style="font-size:small">Learn more about Dungeon and Dragons by clicking the button below.</p>
     <p><a href="https://dnd.wizards.com/" class="btn btn-primary" target="_blank">Learn more &raquo;</a></p>
+        <script type="text/javascript">
+            randQuote();
+        </script>
 </div>
 
 <div class="row jayContainer">
@@ -31,6 +45,7 @@
             <p>You can follow this project on github. The button below will take you to the repository.</p>
             <p><a class="btn btn-primary" href="https://github.com/theMagnificentJay/DnD5eCharacterBuilder" target="_blank">Github &raquo;</a></p>
         </div>
+        <hr />
         <h3>Author</h3>
         <div>
             <p>You can find more information on the author of this project as well as their other projects.</p>
