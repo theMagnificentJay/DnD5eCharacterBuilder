@@ -29,6 +29,6 @@ namespace DnD5eCharacterBuilder.Models
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Modified { get; set; }
 
-        public virtual Statistic Statistics { get; set; }
+        public Statistic Statistics { get; set; }
     }
 }

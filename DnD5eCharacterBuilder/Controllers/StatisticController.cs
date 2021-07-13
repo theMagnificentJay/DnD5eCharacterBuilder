@@ -36,7 +36,7 @@ namespace DnD5eCharacterBuilder.Controllers
 
             if (service.CreateStatistic(model, id))
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("~/Views/Home/Index.cshtml");
             }
 
             return View(model);
@@ -92,7 +92,7 @@ namespace DnD5eCharacterBuilder.Controllers
             if (service.UpdateStatistic(model))
             {
                 TempData["Save Result"] = "Character updated.";
-                return RedirectToAction("Index");
+                return View("~/Views/Home/Index.cshtml");
             }
 
             ModelState.AddModelError("", "Something went wrong.");

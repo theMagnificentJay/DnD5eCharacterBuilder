@@ -8,11 +8,14 @@ namespace DnD5eCharacterBuilder.Models
 {
     public class StatisticCreate
     {
+        public int StatisticId { get; set; }
         public int Strength { get; set; }
         public int Dexterity { get; set; }
         public int Constitution { get; set; }
         public int Intelligence { get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
+
+        public virtual CharacterDetail Character { get; set; }
     }
 }

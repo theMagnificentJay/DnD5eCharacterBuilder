@@ -29,7 +29,7 @@ namespace DnD5eCharacterBuilder.Services
                     CharacterClass = model.CharacterClass,
                     Xp = model.Xp,
                     PlayerName = model.PlayerName,
-                    Created = DateTimeOffset.Now,
+                    Created = DateTimeOffset.Now
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -84,7 +84,8 @@ namespace DnD5eCharacterBuilder.Services
                         Xp = entity.Xp,
                         PlayerName = entity.PlayerName,
                         Created = entity.Created,
-                        Modified = entity.Modified
+                        Modified = entity.Modified,
+                        Statistics = entity.Statistics
                     };
             }
         }
@@ -114,11 +115,17 @@ namespace DnD5eCharacterBuilder.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+                var stat =
+                    ctx
+                    .Statistics
+                    .Single(e => e.StatisticId == characterId && e.Character.OwnerId == _userId);
+
                 var entity =
                     ctx
                     .Characters
                     .Single(e => e.Id == characterId && e.OwnerId == _userId);
 
+                ctx.Statistics.Remove(stat);
                 ctx.Characters.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
