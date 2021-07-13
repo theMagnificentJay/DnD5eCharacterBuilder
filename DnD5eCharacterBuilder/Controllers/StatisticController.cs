@@ -36,7 +36,7 @@ namespace DnD5eCharacterBuilder.Controllers
 
             if (service.CreateStatistic(model, id))
             {
-                return RedirectToAction("~/Views/Home/Index.cshtml");
+                return View("~/Views/Home/Index.cshtml");
             }
 
             return View(model);

@@ -54,20 +54,20 @@
                         <div class="col-sm-2">Charisma</div>
                     </div>
                     <div class="row align-items-center">
-                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistics.Strength).ToString()</div>
-                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistics.Dexterity).ToString()</div>
-                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistics.Constitution).ToString()</div>
-                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistics.Intelligence).ToString()</div>
-                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistics.Wisdom).ToString()</div>
-                        <div class="col-sm-2">@Html.DisplayFor(model => model.Statistics.Charisma)</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : Html.DisplayFor(model => model.Statistics.Strength).ToString())</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : Html.DisplayFor(model => model.Statistics.Dexterity).ToString())</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : Html.DisplayFor(model => model.Statistics.Constitution).ToString())</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : Html.DisplayFor(model => model.Statistics.Intelligence).ToString())</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : Html.DisplayFor(model => model.Statistics.Wisdom).ToString())</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : Html.DisplayFor(model => model.Statistics.Charisma).ToString())</div>
                     </div>
                     <div class="row align-items-center">
-                        <div class="col-sm-2">Mod</div>
-                        <div class="col-sm-2">Mod</div>
-                        <div class="col-sm-2">Mod</div>
-                        <div class="col-sm-2">Mod</div>
-                        <div class="col-sm-2">Mod</div>
-                        <div class="col-sm-2">Mod</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("Mod") : ("+" + (Model.Statistics.Strength - 10) / 2))</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("Mod") : ("+" + (Model.Statistics.Dexterity - 10) / 2))</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("Mod") : ("+" + (Model.Statistics.Constitution - 10) / 2))</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("Mod") : ("+" + (Model.Statistics.Intelligence - 10) / 2))</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("Mod") : ("+" + (Model.Statistics.Wisdom - 10) / 2))</div>
+                        <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("Mod") : ("+" + (Model.Statistics.Charisma - 10) / 2))</div>
                     </div>
                 </div>
             </div>
@@ -116,51 +116,51 @@
 
             <div class="row align-items-center">
                 <div class="col-sm-2 boldthis">Acrobatics</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Dexterity - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">Animal Handling</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Wisdom - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">Arcana</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Intelligence - 10) / 2))</div>
             </div>
             <div class="row align-items-center">
                 <div class="col-sm-2 boldthis">Athletics</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Strength - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">Deception</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Charisma - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">History</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Intelligence - 10) / 2))</div>
             </div>
             <div class="row align-items-center">
                 <div class="col-sm-2 boldthis">Insight</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Wisdom - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">Intimidation</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Charisma - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">Investigation</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Intelligence - 10) / 2))</div>
             </div>
             <div class="row align-items-center">
                 <div class="col-sm-2 boldthis">Medicine</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Wisdom - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">Nature</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Intelligence - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">Perception</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Wisdom - 10) / 2))</div>
             </div>
             <div class="row align-items-center">
                 <div class="col-sm-2 boldthis">Performance</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Charisma - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">Persuasion</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Charisma - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">Religion</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Intelligence - 10) / 2))</div>
             </div>
             <div class="row align-items-center">
                 <div class="col-sm-2 boldthis">Sleight of Hand</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Dexterity - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">Stealth</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Dexterity - 10) / 2))</div>
                 <div class="col-sm-2 boldthis">Survival</div>
-                <div class="col-sm-2">Value</div>
+                <div class="col-sm-2">@(String.IsNullOrEmpty(Model.Statistics?.StatisticId.ToString()) ? ("-") : ("+" + (Model.Statistics.Wisdom - 10) / 2))</div>
             </div>
 
         </div>
@@ -180,7 +180,7 @@
 
         </div>
 
-        <div style="text-align:center;margin-top:25px">
+        <div style="text-align:center">
             <div>
                 @Html.ActionLink("Edit", "Edit", new { id = Model.CharacterId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = Model.CharacterId }) |
