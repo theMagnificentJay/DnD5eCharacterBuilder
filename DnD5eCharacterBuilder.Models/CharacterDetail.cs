@@ -29,6 +29,11 @@ namespace DnD5eCharacterBuilder.Models
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Modified { get; set; }
 
+        public Bio Bio { get; set; }
+        public Expertise Expertise { get; set; }
+        public MiscStat MiscStat { get; set; }
+        public SavingThrow SavingThrow { get; set; }
+        public Skill Skill { get; set; }
         public Statistic Statistics { get; set; }
     }
 }
